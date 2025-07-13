@@ -4,6 +4,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>KUDIMA – Plataforma de Cura Digital</title>
   <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
   <style>
     * {
       box-sizing: border-box;
@@ -23,11 +24,6 @@ header {
   padding: 30px;
   text-align: center;
   border-radius: 10px;
-}
-
-header h1 {
-  font-size: 2.5em;
-  margin-bottom: 10px;
 }
 
 nav {
@@ -71,11 +67,35 @@ footer {
   margin-top: 40px;
 }
 
-#chat {
-  background-color: #edf2f4;
-  padding: 20px;
-  border-radius: 10px;
+#chat, #formulario, #mapa, #audio {
   margin-top: 30px;
+}
+
+form input, form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+form button {
+  background-color: #d90429;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#mapid {
+  height: 300px;
+  border-radius: 10px;
+}
+
+audio {
+  width: 100%;
+  margin-top: 15px;
 }
 
   </style>
@@ -85,24 +105,40 @@ footer {
     <h1>KUDIMA</h1>
     <p>Plataforma de Cura Digital Afrokódica</p>
   </header>  <nav>
-    <a href="#sintoma">Relatar um Sintoma</a>
+    <a href="#formulario">Relatar um Sintoma</a>
     <a href="#mapa">Ver Mapa de Cura</a>
-    <a href="#sabedoria">Ouvir Sabedoria</a>
-  </nav>  <section id="sintoma">
+    <a href="#audio">Ouvir Sabedoria</a>
+  </nav>  <section id="formulario">
     <h2>Relatar um Sintoma</h2>
-    <p>Partilha com a plataforma os sintomas que estás a sentir para que possamos acompanhar as vibrações da tua comunidade. Em breve terás aqui um formulário.</p>
+    <form>
+      <input type="text" placeholder="Nome (opcional)">
+      <input type="text" placeholder="Localização">
+      <textarea rows="4" placeholder="Descreva o sintoma..."></textarea>
+      <button type="submit">Enviar com Consciência</button>
+    </form>
   </section>  <section id="mapa">
     <h2>Ver Mapa de Cura</h2>
-    <p>A KUDIMA irá permitir ver, em breve, onde estão os focos de cura e de desequilíbrio. Este espaço será geolocalizado com ética e proteção de dados.</p>
-  </section>  <section id="sabedoria">
+    <div id="mapid"></div>
+  </section>  <section id="audio">
     <h2>Ouvir Sabedoria</h2>
-    <p>Em breve poderás escutar cantos ancestrais e mensagens simbólicas de equilíbrio. Aqui a tecnologia encontra a alma.</p>
+    <p>Canto ancestral afrokódico para equilíbrio interior:</p>
+    <audio controls>
+      <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+      O teu navegador não suporta o áudio.
+    </audio>
   </section>  <section id="chat">
     <h2>Chat KUDIMA</h2>
     <p>Escreve um comando simbólico: <em>cura</em>, <em>mapa</em>, <em>pressão</em>, <em>sabedoria</em>, ou <em>sintoma</em>.</p>
     <p><strong>Resposta:</strong> Em breve este espaço será dinâmico e sentirá tua presença.</p>
   </section>  <footer>
     <p>🌿 Desenvolvido com alma por Dala De Carvalho | KUDIMA.AI © 2025</p>
-  </footer>
-</body>
+  </footer>  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>  <script>
+    var map = L.map('mapid').setView([-11.2027, 17.8739], 6);
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '&copy; OpenStreetMap contributors'
+    }).addTo(map);
+    L.marker([-11.2027, 17.8739]).addTo(map)
+      .bindPopup('Ponto de Cura Activo')
+      .openPopup();
+  </script></body>
 </html>
