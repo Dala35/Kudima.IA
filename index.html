@@ -125,6 +125,19 @@ footer {
   cursor: pointer;
 }
 
+.panel-extra {
+  padding: 20px;
+  margin: 40px auto;
+  max-width: 800px;
+  background-color: #1f2e2f;
+  border-radius: 10px;
+  border: 1px solid #334d50;
+}
+
+.panel-extra h3 {
+  color: #ffdd88;
+}
+
 @keyframes fadeIn {
   from {opacity: 0; transform: translateY(-20px);}
   to {opacity: 1; transform: translateY(0);}
@@ -142,7 +155,15 @@ footer {
     <div class="module"><h3>APP COMUNITÁRIO</h3><p>Relatar sintomas e obter conselhos personalizados.</p></div>
     <div class="module"><h3>PAINEL DE OBSERVAÇÃO</h3><p>Monitorar surtos & sinais comunitários.</p></div>
     <div class="module"><h3>CAMADA ESPIRITUAL</h3><p>Fortalecer a dignidade e a cura simbólica.</p></div>
-  </section>  <footer>
+  </section>  <div class="panel-extra">
+    <h3>📍 Relatar um Sintoma</h3>
+    <p>Em breve poderás preencher um formulário que será partilhado com um curador comunitário.</p><h3>🗺️ Ver Mapa de Cura</h3>
+<p>Explora zonas com maior incidência de sintomas relatados (módulo em desenvolvimento).</p>
+
+<h3>🎧 Ouvir Sabedoria</h3>
+<p>Escuta cantos afrocódicos e orientações de bem-estar de nossos anciãos e IA Sankofa.</p>
+
+  </div>  <footer>
     Criado por Dala De Carvalho – Guardião do Afrokódico © 2025
   </footer>  <div id="chatbot">
     <div id="chat-header">Cântico KUDIMA</div>
@@ -172,6 +193,8 @@ footer {
       if (texto.includes("cura")) return "A cura começa com o ouvir. Respira, observa o teu corpo, e caminha em consciência.";
       if (texto.includes("pressão") || texto.includes("tensão")) return "A pressão alta ou baixa muitas vezes revela o estado emocional e nutricional. Já bebeste água hoje?";
       if (texto.includes("ola")) return "Saudações curativas. Estou aqui para escutar.";
+      if (texto.includes("mapa")) return "O Mapa de Cura será ativado em breve. Continua conectado.";
+      if (texto.includes("relatar")) return "Em breve poderás relatar sintomas de forma segura e simbiótica.";
       return "Tudo o que sentes é válido. Desejas relatar um sintoma ou ouvir um conselho ancestral?";
     }
   </script></body>
