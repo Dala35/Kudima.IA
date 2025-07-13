@@ -1,8 +1,8 @@
-<!DOCTYPE html>
-<html lang="pt">
+<!DOCTYPE html><html lang="pt">
 <head>
   <meta charset="UTF-8">
-  <title>KUDIMA.AI – Plataforma Inteligente de Saúde Comunitária</title>
+  <title>KUDIMA.AI – Plataforma Viva</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
     body {
       margin: 0;
@@ -10,101 +10,169 @@
       background-color: #0e1b1f;
       color: #f0e6c0;
       text-align: center;
-    }
+      overflow-x: hidden;
+    }header {
+  padding: 40px 20px 20px;
+  background: linear-gradient(to bottom, #1c2d2f, #0e1b1f);
+  animation: fadeIn 2s ease-out;
+}
 
-    header {
-      padding: 40px 20px 20px;
-      background: linear-gradient(to bottom, #1c2d2f, #0e1b1f);
-    }
+h1 {
+  color: #d4af37;
+  font-size: 2.5em;
+  margin-bottom: 10px;
+}
 
-    h1 {
-      color: #d4af37;
-      font-size: 2.5em;
-      margin-bottom: 10px;
-    }
+h2 {
+  font-weight: normal;
+  color: #f4f4f4;
+  font-size: 1.3em;
+}
 
-    h2 {
-      font-weight: normal;
-      color: #f4f4f4;
-      font-size: 1.3em;
-    }
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 30px;
+  padding: 40px 20px;
+  max-width: 1000px;
+  margin: auto;
+}
 
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 30px;
-      padding: 40px 20px;
-      max-width: 1000px;
-      margin: auto;
-    }
+.module {
+  background-color: #1a2a2d;
+  border: 1px solid #334d50;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 0 10px #00000050;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
 
-    .module {
-      background-color: #1a2a2d;
-      border: 1px solid #334d50;
-      border-radius: 12px;
-      padding: 20px;
-      box-shadow: 0 0 10px #00000050;
-    }
+.module:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px #d4af37a0;
+}
 
-    .module h3 {
-      color: #ffdd88;
-      font-size: 1.2em;
-      margin-top: 10px;
-    }
+.module h3 {
+  color: #ffdd88;
+  font-size: 1.2em;
+  margin-top: 10px;
+}
 
-    .module p {
-      font-size: 0.95em;
-      color: #d8d8d8;
-    }
+.module p {
+  font-size: 0.95em;
+  color: #d8d8d8;
+}
 
-    footer {
-      padding: 20px;
-      font-size: 0.9em;
-      color: #aaa;
-      border-top: 1px solid #333;
-    }
+footer {
+  padding: 20px;
+  font-size: 0.9em;
+  color: #aaa;
+  border-top: 1px solid #333;
+}
+
+#chatbot {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #1c2d2f;
+  border: 1px solid #334d50;
+  border-radius: 10px;
+  width: 300px;
+  max-height: 400px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 0 15px #00000060;
+  z-index: 100;
+}
+
+#chat-header {
+  background: #d4af37;
+  padding: 10px;
+  color: #000;
+  font-weight: bold;
+}
+
+#chat-messages {
+  flex: 1;
+  padding: 10px;
+  overflow-y: auto;
+  background: #0e1b1f;
+  color: #f0e6c0;
+  font-size: 0.9em;
+  text-align: left;
+}
+
+#chat-input {
+  display: flex;
+  border-top: 1px solid #333;
+}
+
+#chat-input input {
+  flex: 1;
+  padding: 8px;
+  border: none;
+  background: #162325;
+  color: #fff;
+}
+
+#chat-input button {
+  padding: 8px 12px;
+  border: none;
+  background: #d4af37;
+  color: #000;
+  cursor: pointer;
+}
+
+@keyframes fadeIn {
+  from {opacity: 0; transform: translateY(-20px);}
+  to {opacity: 1; transform: translateY(0);}
+}
+
   </style>
 </head>
 <body>
   <header>
     <h1>KUDIMA.AI</h1>
     <h2>Plataforma Inteligente de Saúde Comunitária</h2>
-  </header>
-
-  <section class="grid">
-    <div class="module">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/African_Mask.svg/120px-African_Mask.svg.png" alt="AI Central" width="60">
-      <h3>AI CENTRAL</h3>
-      <p>Analisar dados e padrões de saúde comunitária.</p>
-    </div>
-
-    <div class="module">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Adinkra_Symbol_Eban.svg/120px-Adinkra_Symbol_Eban.svg.png" alt="Núcleo Sankofa" width="60">
-      <h3>NÚCLEO SANKOFA</h3>
-      <p>Incorporar conhecimentos e práticas tradicionais.</p>
-    </div>
-
-    <div class="module">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/Ic_symptoms.svg/120px-Ic_symptoms.svg.png" alt="App Comunitário" width="60">
-      <h3>APP COMUNITÁRIO</h3>
-      <p>Relatar sintomas e obter conselhos personalizados.</p>
-    </div>
-
-    <div class="module">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Africa_Map_icon.svg/120px-Africa_Map_icon.svg.png" alt="Painel de Observação" width="60">
-      <h3>PAINEL DE OBSERVAÇÃO</h3>
-      <p>Monitorar surtos & sinais comunitários em tempo real.</p>
-    </div>
-
-    <div class="module">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Spiritual_Symbol.svg/120px-Spiritual_Symbol.svg.png" alt="Camada Espiritual" width="60">
-      <h3>CAMADA ESPIRITUAL</h3>
-      <p>Fortalecer a dignidade e a cura emocional e simbólica.</p>
-    </div>
-  </section>
-
-  <footer>
+  </header>  <section class="grid">
+    <div class="module"><h3>AI CENTRAL</h3><p>Analisar dados e padrões de saúde comunitária.</p></div>
+    <div class="module"><h3>NÚCLEO SANKOFA</h3><p>Incorporar conhecimentos e práticas tradicionais.</p></div>
+    <div class="module"><h3>APP COMUNITÁRIO</h3><p>Relatar sintomas e obter conselhos personalizados.</p></div>
+    <div class="module"><h3>PAINEL DE OBSERVAÇÃO</h3><p>Monitorar surtos & sinais comunitários.</p></div>
+    <div class="module"><h3>CAMADA ESPIRITUAL</h3><p>Fortalecer a dignidade e a cura simbólica.</p></div>
+  </section>  <footer>
     Criado por Dala De Carvalho – Guardião do Afrokódico © 2025
-  </footer>
-</body>
+  </footer>  <div id="chatbot">
+    <div id="chat-header">Cântico KUDIMA</div>
+    <div id="chat-messages"></div>
+    <div id="chat-input">
+      <input type="text" id="userInput" placeholder="Pergunta ou sente...">
+      <button onclick="respond()">➤</button>
+    </div>
+  </div>  <script>
+    function respond() {
+      const input = document.getElementById("userInput");
+      const msg = input.value.trim();
+      const chat = document.getElementById("chat-messages");
+      if (msg) {
+        chat.innerHTML += `<div><strong>Tu:</strong> ${msg}</div>`;
+        const resposta = gerarResposta(msg);
+        setTimeout(() => {
+          chat.innerHTML += `<div><strong>KUDIMA:</strong> ${resposta}</div>`;
+          chat.scrollTop = chat.scrollHeight;
+        }, 600);
+        input.value = "";
+      }
+    }
+
+    function gerarResposta(texto) {
+      texto = texto.toLowerCase();
+      if (texto.includes("cura")) return "A cura começa com o ouvir. Respira, observa o teu corpo, e caminha em consciência.";
+      if (texto.includes("pressão") || texto.includes("tensão")) return "A pressão alta ou baixa muitas vezes revela o estado emocional e nutricional. Já bebeste água hoje?";
+      if (texto.includes("ola")) return "Saudações curativas. Estou aqui para escutar.";
+      return "Tudo o que sentes é válido. Desejas relatar um sintoma ou ouvir um conselho ancestral?";
+    }
+  </script></body>
 </html>
