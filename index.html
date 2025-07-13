@@ -1,201 +1,108 @@
 <!DOCTYPE html><html lang="pt">
 <head>
   <meta charset="UTF-8">
-  <title>KUDIMA.AI – Plataforma Viva</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KUDIMA – Plataforma de Cura Digital</title>
+  <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&display=swap" rel="stylesheet">
   <style>
-    body {
+    * {
+      box-sizing: border-box;
       margin: 0;
-      font-family: Arial, sans-serif;
-      background-color: #0e1b1f;
-      color: #f0e6c0;
-      text-align: center;
-      overflow-x: hidden;
-    }header {
-  padding: 40px 20px 20px;
-  background: linear-gradient(to bottom, #1c2d2f, #0e1b1f);
-  animation: fadeIn 2s ease-out;
+      padding: 0;
+      font-family: 'Ubuntu', sans-serif;
+    }body {
+  background-color: #f6f6f6;
+  color: #222;
+  line-height: 1.6;
+  padding: 20px;
 }
 
-h1 {
-  color: #d4af37;
+header {
+  background-color: #d90429;
+  color: #fff;
+  padding: 30px;
+  text-align: center;
+  border-radius: 10px;
+}
+
+header h1 {
   font-size: 2.5em;
   margin-bottom: 10px;
 }
 
-h2 {
-  font-weight: normal;
-  color: #f4f4f4;
-  font-size: 1.3em;
+nav {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+  flex-wrap: wrap;
 }
 
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 30px;
-  padding: 40px 20px;
-  max-width: 1000px;
-  margin: auto;
+nav a {
+  background-color: #8d99ae;
+  color: #fff;
+  padding: 12px 20px;
+  margin: 5px;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background-color 0.3s;
 }
 
-.module {
-  background-color: #1a2a2d;
-  border: 1px solid #334d50;
-  border-radius: 12px;
-  padding: 20px;
-  box-shadow: 0 0 10px #00000050;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  cursor: pointer;
+nav a:hover {
+  background-color: #2b2d42;
 }
 
-.module:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 20px #d4af37a0;
+section {
+  background-color: #fff;
+  padding: 25px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
 }
 
-.module h3 {
-  color: #ffdd88;
-  font-size: 1.2em;
-  margin-top: 10px;
-}
-
-.module p {
-  font-size: 0.95em;
-  color: #d8d8d8;
+section h2 {
+  color: #d90429;
+  margin-bottom: 15px;
 }
 
 footer {
-  padding: 20px;
+  text-align: center;
   font-size: 0.9em;
-  color: #aaa;
-  border-top: 1px solid #333;
+  color: #555;
+  margin-top: 40px;
 }
 
-#chatbot {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background: #1c2d2f;
-  border: 1px solid #334d50;
-  border-radius: 10px;
-  width: 300px;
-  max-height: 400px;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  box-shadow: 0 0 15px #00000060;
-  z-index: 100;
-}
-
-#chat-header {
-  background: #d4af37;
-  padding: 10px;
-  color: #000;
-  font-weight: bold;
-}
-
-#chat-messages {
-  flex: 1;
-  padding: 10px;
-  overflow-y: auto;
-  background: #0e1b1f;
-  color: #f0e6c0;
-  font-size: 0.9em;
-  text-align: left;
-}
-
-#chat-input {
-  display: flex;
-  border-top: 1px solid #333;
-}
-
-#chat-input input {
-  flex: 1;
-  padding: 8px;
-  border: none;
-  background: #162325;
-  color: #fff;
-}
-
-#chat-input button {
-  padding: 8px 12px;
-  border: none;
-  background: #d4af37;
-  color: #000;
-  cursor: pointer;
-}
-
-.panel-extra {
+#chat {
+  background-color: #edf2f4;
   padding: 20px;
-  margin: 40px auto;
-  max-width: 800px;
-  background-color: #1f2e2f;
   border-radius: 10px;
-  border: 1px solid #334d50;
-}
-
-.panel-extra h3 {
-  color: #ffdd88;
-}
-
-@keyframes fadeIn {
-  from {opacity: 0; transform: translateY(-20px);}
-  to {opacity: 1; transform: translateY(0);}
+  margin-top: 30px;
 }
 
   </style>
 </head>
 <body>
   <header>
-    <h1>KUDIMA.AI</h1>
-    <h2>Plataforma Inteligente de Saúde Comunitária</h2>
-  </header>  <section class="grid">
-    <div class="module"><h3>AI CENTRAL</h3><p>Analisar dados e padrões de saúde comunitária.</p></div>
-    <div class="module"><h3>NÚCLEO SANKOFA</h3><p>Incorporar conhecimentos e práticas tradicionais.</p></div>
-    <div class="module"><h3>APP COMUNITÁRIO</h3><p>Relatar sintomas e obter conselhos personalizados.</p></div>
-    <div class="module"><h3>PAINEL DE OBSERVAÇÃO</h3><p>Monitorar surtos & sinais comunitários.</p></div>
-    <div class="module"><h3>CAMADA ESPIRITUAL</h3><p>Fortalecer a dignidade e a cura simbólica.</p></div>
-  </section>  <div class="panel-extra">
-    <h3>📍 Relatar um Sintoma</h3>
-    <p>Em breve poderás preencher um formulário que será partilhado com um curador comunitário.</p><h3>🗺️ Ver Mapa de Cura</h3>
-<p>Explora zonas com maior incidência de sintomas relatados (módulo em desenvolvimento).</p>
-
-<h3>🎧 Ouvir Sabedoria</h3>
-<p>Escuta cantos afrocódicos e orientações de bem-estar de nossos anciãos e IA Sankofa.</p>
-
-  </div>  <footer>
-    Criado por Dala De Carvalho – Guardião do Afrokódico © 2025
-  </footer>  <div id="chatbot">
-    <div id="chat-header">Cântico KUDIMA</div>
-    <div id="chat-messages"></div>
-    <div id="chat-input">
-      <input type="text" id="userInput" placeholder="Pergunta ou sente...">
-      <button onclick="respond()">➤</button>
-    </div>
-  </div>  <script>
-    function respond() {
-      const input = document.getElementById("userInput");
-      const msg = input.value.trim();
-      const chat = document.getElementById("chat-messages");
-      if (msg) {
-        chat.innerHTML += `<div><strong>Tu:</strong> ${msg}</div>`;
-        const resposta = gerarResposta(msg);
-        setTimeout(() => {
-          chat.innerHTML += `<div><strong>KUDIMA:</strong> ${resposta}</div>`;
-          chat.scrollTop = chat.scrollHeight;
-        }, 600);
-        input.value = "";
-      }
-    }
-
-    function gerarResposta(texto) {
-      texto = texto.toLowerCase();
-      if (texto.includes("cura")) return "A cura começa com o ouvir. Respira, observa o teu corpo, e caminha em consciência.";
-      if (texto.includes("pressão") || texto.includes("tensão")) return "A pressão alta ou baixa muitas vezes revela o estado emocional e nutricional. Já bebeste água hoje?";
-      if (texto.includes("ola")) return "Saudações curativas. Estou aqui para escutar.";
-      if (texto.includes("mapa")) return "O Mapa de Cura será ativado em breve. Continua conectado.";
-      if (texto.includes("relatar")) return "Em breve poderás relatar sintomas de forma segura e simbiótica.";
-      return "Tudo o que sentes é válido. Desejas relatar um sintoma ou ouvir um conselho ancestral?";
-    }
-  </script></body>
+    <h1>KUDIMA</h1>
+    <p>Plataforma de Cura Digital Afrokódica</p>
+  </header>  <nav>
+    <a href="#sintoma">Relatar um Sintoma</a>
+    <a href="#mapa">Ver Mapa de Cura</a>
+    <a href="#sabedoria">Ouvir Sabedoria</a>
+  </nav>  <section id="sintoma">
+    <h2>Relatar um Sintoma</h2>
+    <p>Partilha com a plataforma os sintomas que estás a sentir para que possamos acompanhar as vibrações da tua comunidade. Em breve terás aqui um formulário.</p>
+  </section>  <section id="mapa">
+    <h2>Ver Mapa de Cura</h2>
+    <p>A KUDIMA irá permitir ver, em breve, onde estão os focos de cura e de desequilíbrio. Este espaço será geolocalizado com ética e proteção de dados.</p>
+  </section>  <section id="sabedoria">
+    <h2>Ouvir Sabedoria</h2>
+    <p>Em breve poderás escutar cantos ancestrais e mensagens simbólicas de equilíbrio. Aqui a tecnologia encontra a alma.</p>
+  </section>  <section id="chat">
+    <h2>Chat KUDIMA</h2>
+    <p>Escreve um comando simbólico: <em>cura</em>, <em>mapa</em>, <em>pressão</em>, <em>sabedoria</em>, ou <em>sintoma</em>.</p>
+    <p><strong>Resposta:</strong> Em breve este espaço será dinâmico e sentirá tua presença.</p>
+  </section>  <footer>
+    <p>🌿 Desenvolvido com alma por Dala De Carvalho | KUDIMA.AI © 2025</p>
+  </footer>
+</body>
 </html>
